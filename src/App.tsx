@@ -1,20 +1,18 @@
-import { Button } from 'antd';
-import SelectLanguage from './components/SelectLanguage';
+import { BrowserRouter as Router, Link, Route, BrowserRouter, Routes } from 'react-router-dom';
+import './App.scss';
+
+import HomePage from './pages/Homepage';
 import FormTablePage from './pages/FormTablePage';
-import './App.scss'
 
 function App() {
-	return (
-		<>
-			<div className='headertopright'>
-				<SelectLanguage  />
-				<Button  style={{right: 0, top: '10px'}}>หน้าหลัก</Button>
-			</div>
-			<FormTablePage />
-		</>
-	)
+  return (
+    <BrowserRouter>
+		<Routes>
+			<Route path="/" element={<HomePage />} />
+			<Route path="/form-table" element={<FormTablePage />} />
+		</Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
-
-
+export default App;
