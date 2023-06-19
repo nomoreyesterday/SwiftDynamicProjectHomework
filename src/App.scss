@@ -1,0 +1,86 @@
+.headertopleft {
+  position: absolute;
+  top: 40px;
+  left: 35px;
+}
+
+.headertopright {
+  margin: 0 0 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  outline: none;
+  border: 0px;
+}
+
+.dataform{
+  position: relative;
+  top: 100px;
+  padding: 0 auto;
+  left: calc(20%);
+  width: 1060px;
+  border: 3px solid #5b5717;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.id-card-separator {
+  margin: 0 10px;
+}
+
+.submitButtonGroup {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0 170px;
+}
+
+.clearbutton .submitbutton {
+  margin: 0 50px
+}
+
+.select-placeholder-left {
+  text-align: left;
+}
+
+.tableform{
+  position: relative;
+  padding: 0 5%;
+  width: 100%;
+  height: 305px;
+  top: 115px;
+}
+
+.boxcontainer{
+  
+  // position: absolute;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.TestBox {
+    padding: 20px;
+    width: 300px;
+    height: 120px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    cursor: pointer;
+    p {
+      bottom: 0;
+    }
+}
+
+.box2{
+  margin: 0 10px;
+}
