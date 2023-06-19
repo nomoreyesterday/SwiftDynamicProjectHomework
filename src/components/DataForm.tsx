@@ -45,22 +45,22 @@ const DataForm = () => {
 	}
 
 	//Put sample
-	const onFill = () => {
-		form.setFieldsValue({
-			id: "1",
-			gender: "ชาย",
-			idNumber: "1-2222-33333-44-5",
-			prefix: +66,
-			// phonenumber: "66-123456789",
-			prename: "นาย",
-			name: "1111",
-			lastname: "2222222",
-			// birthdate: "2021-01-14",
-			nationality: "ไทย",
-			passport: "111111",
-			salary: "111111",
-		  });
-	}
+	// const onFill = () => {
+	// 	form.setFieldsValue({
+	// 		id: "1",
+	// 		gender: "ชาย",
+	// 		idNumber: "1-2222-33333-44-5",
+	// 		prefix: +66,
+	// 		// phonenumber: "66-123456789",
+	// 		prename: "นาย",
+	// 		name: "1111",
+	// 		lastname: "2222222",
+	// 		// birthdate: "2021-01-14",
+	// 		nationality: "ไทย",
+	// 		passport: "111111",
+	// 		salary: "111111",
+	// 	  });
+	// }
 
 	//ID Number
 	const [idCard, setIdCard] = useState(['', '', '', '', '']);
@@ -343,7 +343,7 @@ const DataForm = () => {
 						className='submitButtonGroup'
 					>
 						<Button onClick={onClear} className='clearbutton'>ล้างข้อมูล</Button>
-						<Button onClick={onFill} className='clearbutton'>ใส่ข้อมูลอัตโนมัติ</Button>
+						{/* <Button onClick={onFill} className='clearbutton'>ใส่ข้อมูลอัตโนมัติ</Button> */}
 						<Button className='submitbutton' type='primary' htmlType='submit'>ส่งข้อมูล</Button>
 					</div>
 				</Row>
