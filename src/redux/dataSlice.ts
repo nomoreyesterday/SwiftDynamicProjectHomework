@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface FormRecord {
+export interface FormRecord {
   id: string;
   gender: string;
   idNumber: string;

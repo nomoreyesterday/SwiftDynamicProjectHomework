@@ -1,12 +1,7 @@
 // import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import { Button, Form, Input, Radio, Row,  Select, DatePicker, Space,  
-	// Checkbox, Space, 
-} from 'antd';
-
-import { useDispatch, 
-	useSelector 
-} from 'react-redux';
+import { Button, Form, Input, Radio, Row,  Select, DatePicker, Space, } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFormData } from '../redux/dataSlice';
 import { v4 as uuidv4 } from 'uuid'
 import { RootState } from '../redux/store';
