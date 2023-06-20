@@ -31,28 +31,36 @@ const initialState: DataState = {
     },
   ],
 };
+
 const dataSlice = createSlice({
 	name: 'data',
 	initialState,
 	reducers: {
-	  setFormData: (state, action: PayloadAction<FormRecord>) => {
-		const id = (state.formData.length + 1).toString();
-		const newData = { ...action.payload, id };
-		state.formData.push(newData);
-	  },
-	  deleteFormData: (state, action: PayloadAction<FormRecord>) => {
-		state.formData = state.formData.filter(
-		  (data) => data.id !== action.payload.id
+		addFormData: (state, action: PayloadAction<FormRecord>) => {
+			const id = (state.formData.length + 1).toString();
+			const newData = { ...action.payload, id };
+			state.formData.push(newData);
+		},
+		deleteFormData: (state, action: PayloadAction<FormRecord>) => {
+			state.formData = state.formData.filter(
+			(data) => data.id !== action.payload.id
 		);
-	  },
-	  deleteAllFormData: (state, action: PayloadAction<FormRecord[]>) => {
-		state.formData = state.formData.filter(
-		  (data) => !action.payload.some((record) => record.id === data.id)
+		},
+		deleteAllFormData: (state, action: PayloadAction<FormRecord[]>) => {
+			state.formData = state.formData.filter(
+			(data) => !action.payload.some((record) => record.id === data.id)
 		);
-	  },
+		},
+		editFormData: (state, action: PayloadAction<FormRecord>) => {
+			const { id, ...updatedData } = action.payload;
+			const index = state.formData.findIndex(data => data.id === id);
+			if (index !== -1) {
+			  state.formData[index] = { ...state.formData[index], ...updatedData };
+			}
+		},
 	},
   });
   
-  export const { setFormData, deleteFormData, deleteAllFormData } = dataSlice.actions;
+  export const { addFormData, deleteFormData, deleteAllFormData, editFormData } = dataSlice.actions;
   
   export default dataSlice.reducer;

@@ -7,7 +7,7 @@ import { Button, Form, Input, Radio, Row,  Select, DatePicker, Space,
 import { useDispatch, 
 	useSelector 
 } from 'react-redux';
-import { setFormData } from '../redux/dataSlice';
+import { addFormData } from '../redux/dataSlice';
 import { v4 as uuidv4 } from 'uuid'
 import { RootState } from '../redux/store';
 
@@ -34,7 +34,7 @@ const DataForm = () => {
 			nationality: values.nationality,
 		  };
 		  
-		dispatch(setFormData(newData));
+		dispatch(addFormData(newData));
 		console.log('form: ', formData);
 	  };
 

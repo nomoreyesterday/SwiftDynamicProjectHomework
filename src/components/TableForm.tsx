@@ -3,7 +3,7 @@ import { Table, Button, Modal, Input, Form, Row, Col  } from 'antd';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { deleteAllFormData, deleteFormData, setFormData } from '../redux/dataSlice';
+import { addFormData, deleteAllFormData, deleteFormData, editFormData,  } from '../redux/dataSlice';
 
 const TableForm = () => {
     const formData = useSelector((state: RootState) => state.data.formData);
@@ -127,7 +127,7 @@ const TableForm = () => {
             };
       
             console.log(formData)
-            dispatch(setFormData(updatedFormData));
+            dispatch(editFormData(updatedFormData));
             setIsEditing(false);
         }
     };
