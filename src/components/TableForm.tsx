@@ -1,9 +1,8 @@
-
 import { Table, Button, Modal, Input, Form, Row, Col  } from 'antd';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { FormRecord, deleteAllFormData, deleteFormData, editFormData,  } from '../redux/dataSlice';
+import { RootState } from '../redux-toolkit/store';
+import { FormRecord, deleteAllFormData, deleteFormData, editFormData,  } from '../redux-toolkit/dataSlice';
 
 const TableForm = () => {
     const formData = useSelector((state: RootState) => state.data.formData);
@@ -17,18 +16,6 @@ const TableForm = () => {
         selectedRowKeys,
         onChange: onSelectChange,
     };
-
-    // interface FormRecord {
-    //     id: string;
-    //     gender: string;
-    //     idNumber: string;
-    //     phoneNumber: string;
-    //     prename: string;
-    //     name: string;
-    //     lastname: string;
-    //     birthdate: string;
-    //     nationality: string;
-    // }
 
     const handleDelete = (record: FormRecord) => {
         if (selectedRowKeys.length === 0 || !selectedRowKeys.includes(record.id)) {
@@ -146,7 +133,6 @@ const TableForm = () => {
                     open={isEditing}
                     closable={false}
                     maskClosable={false}
-
                     footer={[
                         <Button 
                             key="cancel" 
@@ -184,24 +170,24 @@ const TableForm = () => {
                                 rules={[
                                     {
                                     // required: true,
-                                    message: "กรุณาใส่ชื่อ!",
+                                    message: "กรุณาระบุชื่อ",
                                     },
                                 ]}
                                 >
-                                <Input
-                                    onChange={(e) => {
-                                        setEditData((prevData) => {
-                                        if (prevData) {
-                                            return { ...prevData, name: e.target.value } as FormRecord;
-                                        }
-                                        return { name: e.target.value } as FormRecord;
-                                        });
-                                    }}
-                                />
+                                    <Input
+                                        onChange={(e) => {
+                                            setEditData((prevData) => {
+                                            if (prevData) {
+                                                return { ...prevData, name: e.target.value } as FormRecord;
+                                            }
+                                            return { name: e.target.value } as FormRecord;
+                                            });
+                                        }}
+                                    />
                                 </Form.Item>
                             </Col>
-                            </Row>
-                            <Row>
+                        </Row>
+                        <Row>
                             <Col span={24}>
                                 <Form.Item
                                 name="gender"
@@ -209,7 +195,7 @@ const TableForm = () => {
                                 rules={[
                                     {
                                     // required: true,
-                                    message: "กรุณาระบุเพศ!",
+                                    message: "กรุณาระบุข้อมูล",
                                     },
                                 ]}
                                 >
@@ -225,8 +211,8 @@ const TableForm = () => {
                                 />
                                 </Form.Item>
                             </Col>
-                            </Row>
-                            <Row>
+                        </Row>
+                        <Row>
                             <Col span={24}>
                                 <Form.Item
                                 name="phoneNumber"
@@ -234,7 +220,7 @@ const TableForm = () => {
                                 rules={[
                                     {
                                     // required: true,
-                                    message: "กรุณาระบุหมายเลขโทรศัพท์มือถือ!",
+                                    message: "กรุณาระบุหมายเลขโทรศัพท์มือถือ",
                                     },
                                 ]}
                                 >
@@ -250,8 +236,8 @@ const TableForm = () => {
                                 />
                                 </Form.Item>
                             </Col>
-                            </Row>
-                            <Row>
+                        </Row>
+                        <Row>
                             <Col span={24}>
                                 <Form.Item
                                 name="nationality"
@@ -259,7 +245,7 @@ const TableForm = () => {
                                 rules={[
                                     {
                                     // required: true,
-                                    message: "กรุณาระบุสัญชาติ!",
+                                    message: "กรุณาระบุข้อมูล",
                                     },
                                 ]}
                                 >

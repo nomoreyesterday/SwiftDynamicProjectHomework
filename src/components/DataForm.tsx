@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import { Button, Form, Input, Radio, Row,  Select, DatePicker, Space, } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFormData } from '../redux/dataSlice';
+import { addFormData } from '../redux-toolkit/dataSlice';
 import { v4 as uuidv4 } from 'uuid'
-import { RootState } from '../redux/store';
+import { RootState } from '../redux-toolkit/store';
 
 const DataForm = () => {
 	const { Option } = Select;
@@ -40,22 +40,22 @@ const DataForm = () => {
 	}
 
 	//Put sample
-	// const onFill = () => {
-	// 	form.setFieldsValue({
-	// 		id: "1",
-	// 		gender: "ชาย",
-	// 		idNumber: "1-2222-33333-44-5",
-	// 		prefix: +66,
-	// 		// phonenumber: "66-123456789",
-	// 		prename: "นาย",
-	// 		name: "1111",
-	// 		lastname: "2222222",
-	// 		// birthdate: "2021-01-14",
-	// 		nationality: "ไทย",
-	// 		passport: "111111",
-	// 		salary: "111111",
-	// 	  });
-	// }
+	const onFill = () => {
+		form.setFieldsValue({
+			id: "1",
+			gender: "ชาย",
+			idNumber: "1-2222-33333-44-5",
+			prefix: +66,
+			// phonenumber: "66-123456789",
+			prename: "นาย",
+			name: "1111",
+			lastname: "2222222",
+			// birthdate: "2021-01-14",
+			nationality: "ไทย",
+			passport: "111111",
+			salary: "111111",
+		  });
+	}
 
 	//ID Number
 	const [idCard, setIdCard] = useState(['', '', '', '', '']);
@@ -159,7 +159,7 @@ const DataForm = () => {
 						rules={[
 							{ 
 								required: true, 
-								message: 'กรุณาใส่วันเกิด!' 
+								message: 'กรุณาใส่วันเดือนปีเกิด' 
 								// message: 'Please fill your birthdate!' 
 							}
 						]}
@@ -338,7 +338,7 @@ const DataForm = () => {
 						className='submitButtonGroup'
 					>
 						<Button onClick={onClear} className='clearbutton'>ล้างข้อมูล</Button>
-						{/* <Button onClick={onFill} className='clearbutton'>ใส่ข้อมูลอัตโนมัติ</Button> */}
+						<Button onClick={onFill} className='clearbutton'>ใส่ข้อมูลอัตโนมัติ</Button>
 						<Button className='submitbutton' type='primary' htmlType='submit'>ส่งข้อมูล</Button>
 					</div>
 				</Row>

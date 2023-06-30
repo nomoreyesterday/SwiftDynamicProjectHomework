@@ -1,8 +1,6 @@
-import { Button } from 'antd';
 import SelectLanguage from '../components/SelectLanguage';
-import FormTablePage from './FormTablePage';
 
-import { BrowserRouter as Router, Link, Route,  } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 function HomePage() {
 	return (
